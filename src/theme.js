@@ -2,6 +2,17 @@ import createMuiTheme from '@material-ui/core/styles/createMuiTheme'
 import responsiveFontSizes from '@material-ui/core/styles/responsiveFontSizes'
 
 const theme = createMuiTheme({
+  overrides: {
+    MuiPaper: {
+      elevation1: {
+        boxShadow:
+          '0px 1px 3px 0px rgba(0,0,0,0.1),0px 1px 1px 0px rgba(0,0,0,0.07),0px 2px 1px -1px rgba(0,0,0,0.06)',
+      },
+      rounded: {
+        borderRadius: '10px',
+      },
+    },
+  },
   typography: {
     fontFamily: [
       'Helvetica',
@@ -36,6 +47,9 @@ const theme = createMuiTheme({
     },
   },
   palette: {
+    background: {
+      default: '#f9f9f9',
+    },
     primary: {
       main: '#2cb5e8',
     },
