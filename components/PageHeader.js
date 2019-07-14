@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
   },
   root: {
     flexGrow: 1,
-    marginBottom: '85px', // AppBar height is 67px, with 18px of spacing.
+    // marginBottom: '85px', // AppBar height is 67px, with 18px of spacing.
   },
   logo: {
     fontWeight: theme.typography.fontWeightBold,

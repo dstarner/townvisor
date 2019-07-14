@@ -1,6 +1,7 @@
 import React from 'react'
 import App, {Container} from 'next/app'
 import Head from 'next/head'
+import Toolbar from '@material-ui/core/Toolbar';
 import {ThemeProvider} from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import PageHeader from '../components/PageHeader'
@@ -27,6 +28,7 @@ class MaterialApp extends App {
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <PageHeader />
+          <Toolbar />
           <Component {...pageProps} />
         </ThemeProvider>
       </Container>
