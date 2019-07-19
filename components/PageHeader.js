@@ -8,18 +8,18 @@ import MenuIcon from '@material-ui/icons/Menu'
 
 const useStyles = makeStyles(theme => ({
   appBar: {
-    backgroundColor: '#ffffff',
-    borderTop: '8px solid #ffffff',
+    backgroundColor: theme.palette.primary.light,
+    borderTop: `8px solid ${theme.palette.primary.light}`,
   },
   appBarBorder: {
-    borderTop: '4px solid #000000',
+    borderTop: `4px solid ${theme.palette.primary.dark}`,
     paddingBottom: '4px',
   },
   root: {
     flexGrow: 1,
-    // marginBottom: '85px', // AppBar height is 67px, with 18px of spacing.
   },
   logo: {
+    color: theme.palette.primary.dark,
     fontWeight: theme.typography.fontWeightBold,
   },
 }))
@@ -32,12 +32,12 @@ export default function PageHeader() {
       <AppBar
         className={classes.appBar}
         color="inherit"
-        elevation={0}
+        elevation={1}
         position="fixed"
       >
         <div className={classes.appBarBorder}>
           <Toolbar variant="dense">
-            <Typography className={classes.logo} color="inherit" variant="h5">
+            <Typography className={classes.logo} variant="h5">
               Townvisor
             </Typography>
           </Toolbar>

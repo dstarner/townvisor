@@ -16,7 +16,7 @@ class MaterialDocument extends Document {
           />
           <link rel="icon" type="image/png" href="/static/images/favicon.png" />
           {/* PWA primary color */}
-          <meta name="theme-color" content={theme.palette.primary.main} />
+          <meta name="theme-color" content={theme.palette.primary.dark} />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
