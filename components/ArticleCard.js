@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid'
 import {makeStyles} from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import {create} from 'domain'
+import moment from 'moment'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -32,15 +33,17 @@ export default function ArticleCard(props) {
   const classes = useStyles()
 
   const {
-    gridSize,
-    title,
     absPath,
     author,
-    thumbnail,
-    header,
     created,
-    views,
+    gridSize,
+    header,
+    numberOfLikes,
+    title,
+    thumbnail,
   } = props
+
+  const formattedCreatedDate = moment(created)
 
   return (
     <Grid item xs={12} sm={6 * gridSize} md={4 * gridSize} lg={3 * gridSize}>
@@ -61,7 +64,7 @@ export default function ArticleCard(props) {
               color="textSecondary"
               component="h6"
             >
-              {author.name} {created} {views} Views
+              {author.fullName} {formattedCreatedDate.format('MMMM Do YYYY h:mmA')} {numberOfLikes} likes
             </Typography>
             <Typography variant="body2" color="textPrimary" component="p">
               {title}
