@@ -64,10 +64,11 @@ export default function ArticleCard(props) {
               color="textSecondary"
               component="h6"
             >
-              {author.fullName} {formattedCreatedDate.format('MMMM Do YYYY h:mmA')} {numberOfLikes} likes
+              by {author.fullName}
             </Typography>
             <Typography variant="body2" color="textPrimary" component="p">
-              {title}
+              {formattedCreatedDate.format('MMMM Do YYYY h:mmA')}{' '}
+              {numberOfLikes} {numberOfLikes === 1 ? 'like' : 'likes'}
             </Typography>
           </CardContent>
         </CardActionArea>
