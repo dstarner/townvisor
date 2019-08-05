@@ -15,8 +15,6 @@ const useStyles = makeStyles(theme => ({
 export default function Landing({results}) {
   const classes = useStyles()
 
-  console.log(results)
-
   return (
     <Container className={classes.container}>
       <Grid container spacing={2}>
