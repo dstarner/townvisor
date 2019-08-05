@@ -1,6 +1,8 @@
 import React from 'react'
+import NextLink from 'next/link'
 import {makeStyles} from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
+import Link from '@material-ui/core/Link'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
@@ -37,9 +39,11 @@ export default function PageHeader() {
       >
         <div className={classes.appBarBorder}>
           <Toolbar variant="dense">
-            <Typography className={classes.logo} variant="h5">
-              Townvisor
-            </Typography>
+            <NextLink>
+              <Link classes={{root: classes.logo}} href="/" variant="h5">
+                Townvisor
+              </Link>
+            </NextLink>
           </Toolbar>
         </div>
       </AppBar>

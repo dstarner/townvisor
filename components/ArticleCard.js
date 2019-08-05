@@ -1,7 +1,7 @@
 import React from 'react'
 import {create} from 'domain'
 import moment from 'moment'
-import Link from 'next/link'
+import NextLink from 'next/link'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
 import CardActions from '@material-ui/core/CardActions'
@@ -49,7 +49,7 @@ export default function ArticleCard(props) {
   return (
     <Grid item xs={12} sm={6 * gridSize} md={4 * gridSize} lg={3 * gridSize}>
       <Card className={classes.card}>
-        <Link href={absPath}>
+        <NextLink href={absPath}>
           <CardActionArea className={classes.cardAction}>
             <CardMedia
               className={classes.media}
@@ -74,7 +74,7 @@ export default function ArticleCard(props) {
               </Typography>
             </CardContent>
           </CardActionArea>
-        </Link>
+        </NextLink>
       </Card>
     </Grid>
   )
