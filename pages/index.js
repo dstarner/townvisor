@@ -1,40 +1,38 @@
 import React from 'react'
-require('es6-promise').polyfill()
-require('isomorphic-fetch')
-
+import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-import Feed from './components/feed'
-import FeedItem from './components/feed/item'
+import {makeStyles} from '@material-ui/core/styles'
+import ArticleCard from '../components/ArticleCard'
 
-export default class Home extends React.Component {
-  static async getInitialProps() {
-    const url = `${process.env.API_HOST}/posts/feed`
-    const response = await fetch(url)
-    const data = await response.json()
-    return {next: data.next, results: data.results}
-  }
+const useStyles = makeStyles(theme => ({
+  container: {
+    paddingBottom: theme.spacing(2),
+    paddingTop: theme.spacing(2),
+  },
+}))
 
-  /**
-   * This is wrapped in a grid component so that we can
-   * put more items next to each other (like category sidebar)
-   * in a sane and easy manner
-   */
-  render() {
-    return (
-      <Container>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Feed emptyText="We could not load any posts" onLoadNext={() => {}}>
-              {this.props.results
-                ? this.props.results.map((datum, index) => (
-                    <FeedItem key={index} {...datum} />
-                  ))
-                : null}
-            </Feed>
-          </Grid>
-        </Grid>
-      </Container>
-    )
-  }
+export default function Landing({results}) {
+  const classes = useStyles()
+
+  console.log(results)
+
+  return (
+    <Container className={classes.container}>
+      <Grid container spacing={2}>
+        {results
+          ? results.map((result, i) => (
+              <ArticleCard key={i} gridSize={i === 0 ? 2 : 1} {...result} />
+            ))
+          : null}
+      </Grid>
+    </Container>
+  )
+}
+
+Landing.getInitialProps = async () => {
+  const url = `${process.env.API_HOST}/posts/feed`
+  const response = await fetch(url)
+  const data = await response.json()
+  return {next: data.next, results: data.results}
 }

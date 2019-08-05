@@ -4,12 +4,8 @@ import responsiveFontSizes from '@material-ui/core/styles/responsiveFontSizes'
 const theme = createMuiTheme({
   overrides: {
     MuiPaper: {
-      elevation1: {
-        boxShadow:
-          '0px 1px 3px 0px rgba(0,0,0,0.1),0px 1px 1px 0px rgba(0,0,0,0.07),0px 2px 1px -1px rgba(0,0,0,0.06)',
-      },
       rounded: {
-        borderRadius: '10px',
+        borderRadius: '16px',
       },
     },
   },
@@ -27,24 +23,6 @@ const theme = createMuiTheme({
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(','),
-    h1: {
-      fontSize: '4rem',
-    },
-    h2: {
-      fontSize: '3.4rem',
-    },
-    h3: {
-      fontSize: '2.8rem',
-    },
-    h4: {
-      fontSize: '2.4rem',
-    },
-    h5: {
-      fontSize: '2rem',
-    },
-    h6: {
-      fontSize: '1.5rem',
-    },
   },
   palette: {
     background: {
