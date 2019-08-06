@@ -3,8 +3,8 @@ require('es6-promise').polyfill()
 require('isomorphic-fetch')
 import {Container, Grid, Typography} from '@material-ui/core'
 import {withStyles} from '@material-ui/styles'
-import Content from './components/post/content'
-import Comment from './components/post/comments'
+import Content from '../../components/post/content'
+import Comment from '../../components/post/comments'
 
 const styles = theme => ({
   commentsHeading: {

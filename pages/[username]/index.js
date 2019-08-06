@@ -2,9 +2,9 @@ import React from 'react'
 import {makeStyles} from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-import ProfileCard from './components/profile/card'
-import Feed from './components/feed'
-import FeedItem from './components/feed/item'
+import ProfileCard from '../components/profile/card'
+import Feed from '../components/feed'
+import FeedItem from '../components/feed/item'
 
 const useStyles = makeStyles(theme => ({
   container: {
