@@ -1,6 +1,5 @@
+import fetch from 'isomorphic-unfetch'
 import React from 'react'
-require('es6-promise').polyfill()
-require('isomorphic-fetch')
 import {Container, Grid, Typography} from '@material-ui/core'
 import {withStyles} from '@material-ui/styles'
 import Content from '../../components/post/content'

@@ -1,14 +1,12 @@
 require('es6-promise').polyfill()
-require('isomorphic-fetch')
-
 import React from 'react'
 import App, {Container} from 'next/app'
 import Head from 'next/head'
-import Toolbar from '@material-ui/core/Toolbar';
+import Toolbar from '@material-ui/core/Toolbar'
 import {ThemeProvider} from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import PageHeader from '../components/PageHeader'
-import theme from '../src/theme'
+import theme from '../theme'
 
 class MaterialApp extends App {
   componentDidMount() {
